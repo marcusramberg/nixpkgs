@@ -2,7 +2,8 @@
 
 lib.makeScope newScope (self:
   let callPackage = self.callPackage;
-  in {
+  in
+  {
     inherit nim;
     nim_builder = callPackage ../development/nim-packages/nim_builder { };
     buildNimPackage =
@@ -37,7 +38,8 @@ lib.makeScope newScope (self:
     frosty = callPackage ../development/nim-packages/frosty { };
 
     getdns = callPackage ../development/nim-packages/getdns {
-      inherit (pkgs) getdns; };
+      inherit (pkgs) getdns;
+    };
 
     hts-nim = callPackage ../development/nim-packages/hts-nim { };
 
@@ -82,6 +84,8 @@ lib.makeScope newScope (self:
     rocksdb = callPackage ../development/nim-packages/rocksdb {
       inherit (pkgs) rocksdb;
     };
+
+    safeset = callPackage ../development/nim-packages/safeset { };
 
     sass = callPackage ../development/nim-packages/sass { };
 
