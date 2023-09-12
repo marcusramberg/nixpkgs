@@ -16849,6 +16849,8 @@ with pkgs;
 
   nrpl = callPackage ../development/tools/nrpl { };
 
+  nim2lsp = nim2Packages.callPackage ../development/tools/misc/nimlsp { };
+
   nimlsp = nimPackages.callPackage ../development/tools/misc/nimlsp { };
 
   neko = callPackage ../development/compilers/neko { };
