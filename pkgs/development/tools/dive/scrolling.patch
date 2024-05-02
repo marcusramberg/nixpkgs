@@ -1,0 +1,411 @@
+From b7da0f90880ce5e9d3bc2d0f269aadac6ee63c49 Mon Sep 17 00:00:00 2001
+From: moaimullet <moaimullet@users.noreply.github.com>
+Date: Wed, 27 Sep 2023 02:20:55 -0700
+Subject: [PATCH 1/3] Add scrolling to layers pane
+
+---
+ runtime/ui/view/layer.go                | 106 +++++----------
+ runtime/ui/viewmodel/layer_set_state.go | 170 +++++++++++++++++++++++-
+ 2 files changed, 203 insertions(+), 73 deletions(-)
+
+diff --git a/runtime/ui/view/layer.go b/runtime/ui/view/layer.go
+index ce6954a0..5f7afc73 100644
+--- a/runtime/ui/view/layer.go
++++ b/runtime/ui/view/layer.go
+@@ -141,7 +141,12 @@ func (v *Layer) Setup(body *gocui.View, header *gocui.View) error {
+ 	}
+ 	v.helpKeys = helpKeys
+ 
+-	return v.Render()
++	_, height := v.body.Size()
++	v.vm.Setup(0, height)
++	_ = v.Update()
++	_ = v.Render()
++
++	return nil
+ }
+ 
+ // height obtains the height of the current pane (taking into account the lost space due to the header).
+@@ -161,62 +166,48 @@ func (v *Layer) IsVisible() bool {
+ 
+ // PageDown moves to next page putting the cursor on top
+ func (v *Layer) PageDown() error {
+-	step := int(v.height()) + 1
+-	targetLayerIndex := v.vm.LayerIndex + step
+-
+-	if targetLayerIndex > len(v.vm.Layers) {
+-		step -= targetLayerIndex - (len(v.vm.Layers) - 1)
+-	}
+-
+-	if step > 0 {
+-		// err := CursorStep(v.gui, v.body, step)
+-		err := error(nil)
+-		if err == nil {
+-			return v.SetCursor(v.vm.LayerIndex + step)
++	if v.vm.PageDown() {
++		err := v.notifyLayerChangeListeners()
++		if err != nil {
++			return err
+ 		}
++		return v.Render()
+ 	}
+ 	return nil
+ }
+ 
+ // PageUp moves to previous page putting the cursor on top
+ func (v *Layer) PageUp() error {
+-	step := int(v.height()) + 1
+-	targetLayerIndex := v.vm.LayerIndex - step
+-
+-	if targetLayerIndex < 0 {
+-		step += targetLayerIndex
+-	}
+-
+-	if step > 0 {
+-		// err := CursorStep(v.gui, v.body, -step)
+-		err := error(nil)
+-		if err == nil {
+-			return v.SetCursor(v.vm.LayerIndex - step)
++	if v.vm.PageUp() {
++		err := v.notifyLayerChangeListeners()
++		if err != nil {
++			return err
+ 		}
++		return v.Render()
+ 	}
+ 	return nil
+ }
+ 
+ // CursorDown moves the cursor down in the layer pane (selecting a higher layer).
+ func (v *Layer) CursorDown() error {
+-	if v.vm.LayerIndex < len(v.vm.Layers)-1 {
+-		// err := CursorDown(v.gui, v.body)
+-		err := error(nil)
+-		if err == nil {
+-			return v.SetCursor(v.vm.LayerIndex + 1)
++	if v.vm.CursorDown() {
++		err := v.notifyLayerChangeListeners()
++		if err != nil {
++			return err
+ 		}
++		return v.Render()
+ 	}
+ 	return nil
+ }
+ 
+ // CursorUp moves the cursor up in the layer pane (selecting a lower layer).
+ func (v *Layer) CursorUp() error {
+-	if v.vm.LayerIndex > 0 {
+-		// err := CursorUp(v.gui, v.body)
+-		err := error(nil)
+-		if err == nil {
+-			return v.SetCursor(v.vm.LayerIndex - 1)
++	if v.vm.CursorUp() {
++		err := v.notifyLayerChangeListeners()
++		if err != nil {
++			return err
+ 		}
++		return v.Render()
+ 	}
+ 	return nil
+ }
+@@ -243,21 +234,6 @@ func (v *Layer) setCompareMode(compareMode viewmodel.LayerCompareMode) error {
+ 	return v.notifyLayerChangeListeners()
+ }
+ 
+-// renderCompareBar returns the formatted string for the given layer.
+-func (v *Layer) renderCompareBar(layerIdx int) string {
+-	bottomTreeStart, bottomTreeStop, topTreeStart, topTreeStop := v.vm.GetCompareIndexes()
+-	result := "  "
+-
+-	if layerIdx >= bottomTreeStart && layerIdx <= bottomTreeStop {
+-		result = format.CompareBottom("  ")
+-	}
+-	if layerIdx >= topTreeStart && layerIdx <= topTreeStop {
+-		result = format.CompareTop("  ")
+-	}
+-
+-	return result
+-}
+-
+ func (v *Layer) ConstrainLayout() {
+ 	if !v.constrainedRealEstate {
+ 		logrus.Debugf("constraining layer layout")
+@@ -293,7 +269,7 @@ func (v *Layer) Render() error {
+ 	logrus.Tracef("view.Render() %s", v.Name())
+ 
+ 	// indicate when selected
+-	title := "Layers"
++	title := fmt.Sprintf("Layers (%d / %d)", v.vm.LayerIndex+1, len(v.vm.Layers))
+ 	isSelected := v.gui.CurrentView() == v.body
+ 
+ 	v.gui.Update(func(g *gocui.Gui) error {
+@@ -319,28 +295,14 @@ func (v *Layer) Render() error {
+ 
+ 		// update contents
+ 		v.body.Clear()
+-		for idx, layer := range v.vm.Layers {
+-			var layerStr string
+-			if v.constrainedRealEstate {
+-				layerStr = fmt.Sprintf("%-4d", layer.Index)
+-			} else {
+-				layerStr = layer.String()
+-			}
+-
+-			compareBar := v.renderCompareBar(idx)
+-
+-			if idx == v.vm.LayerIndex {
+-				_, err = fmt.Fprintln(v.body, compareBar+" "+format.Selected(layerStr))
+-			} else {
+-				_, err = fmt.Fprintln(v.body, compareBar+" "+layerStr)
+-			}
+-
+-			if err != nil {
+-				logrus.Debug("unable to write to buffer: ", err)
+-				return err
+-			}
++		v.vm.Update(v.constrainedRealEstate)
++		err = v.vm.Render()
++		if err != nil {
++			return err
+ 		}
+-		return nil
++		_, err = fmt.Fprint(v.body, v.vm.Buffer.String())
++
++		return err
+ 	})
+ 	return nil
+ }
+diff --git a/runtime/ui/viewmodel/layer_set_state.go b/runtime/ui/viewmodel/layer_set_state.go
+index 3f028176..68365a09 100644
+--- a/runtime/ui/viewmodel/layer_set_state.go
++++ b/runtime/ui/viewmodel/layer_set_state.go
+@@ -1,19 +1,187 @@
+ package viewmodel
+ 
+-import "github.com/wagoodman/dive/dive/image"
++import (
++	"bytes"
++	"fmt"
++
++	"github.com/sirupsen/logrus"
++
++	"github.com/wagoodman/dive/dive/image"
++	"github.com/wagoodman/dive/runtime/ui/format"
++)
+ 
+ type LayerSetState struct {
+ 	LayerIndex        int
+ 	Layers            []*image.Layer
+ 	CompareMode       LayerCompareMode
+ 	CompareStartIndex int
++
++	constrainedRealEstate bool
++	viewStartIndex int
++	viewHeight     int
++
++	Buffer bytes.Buffer
+ }
+ 
+ func NewLayerSetState(layers []*image.Layer, compareMode LayerCompareMode) *LayerSetState {
+ 	return &LayerSetState{
+ 		Layers:      layers,
+ 		CompareMode: compareMode,
++		LayerIndex:     0,
++		viewStartIndex: 0,
++	}
++}
++
++// Setup initializes the UI concerns within the context of a global [gocui] view object.
++func (vm *LayerSetState) Setup(lowerBound, height int) {
++	vm.viewStartIndex = lowerBound
++	vm.viewHeight = height
++}
++
++// height returns the current height and considers the header
++func (vm *LayerSetState) height() int {
++	return vm.viewHeight - 1
++}
++
++// IsVisible indicates if the layer view pane is currently initialized
++func (vm *LayerSetState) IsVisible() bool {
++	return vm != nil
++}
++
++// ResetCursor moves the cursor back to the top of the buffer and translates to the top of the buffer.
++func (vm *LayerSetState) ResetCursor() {
++	vm.LayerIndex = 0
++	vm.viewStartIndex = 0
++}
++
++
++// PageUp moves to previous page putting the cursor on top
++func (vm *LayerSetState) PageUp() bool {
++	prevPageEndIndex := vm.viewStartIndex
++	prevPageStartIndex := vm.viewStartIndex - vm.viewHeight + 1
++
++	if prevPageStartIndex < 0 {
++		prevPageStartIndex = 0
++		vm.LayerIndex = 0
++		prevPageEndIndex = vm.viewHeight
++		if prevPageEndIndex >= len(vm.Layers) {
++			return false
++		}
++	}
++
++	vm.viewStartIndex = prevPageStartIndex
++
++	if vm.LayerIndex >= prevPageEndIndex {
++		vm.LayerIndex = prevPageEndIndex
++	}
++	return true
++}
++
++// PageDown moves to next page putting the cursor on top
++func (vm *LayerSetState) PageDown() bool {
++	nextPageStartIndex := vm.viewStartIndex + vm.viewHeight - 1
++	nextPageEndIndex := nextPageStartIndex + vm.viewHeight
++
++	if nextPageEndIndex > len(vm.Layers) {
++		nextPageEndIndex = len(vm.Layers) - 1
++		vm.LayerIndex = nextPageEndIndex
++		nextPageStartIndex = nextPageEndIndex - vm.viewHeight + 1
++		if (nextPageStartIndex < 0) {
++			return false
++		}
++	}
++
++	vm.viewStartIndex = nextPageStartIndex
++
++	if vm.LayerIndex < nextPageStartIndex {
++		vm.LayerIndex = nextPageStartIndex
++	}
++	
++	return true
++}
++
++// doCursorUp performs the internal view's adjustments on cursor up. Note: this is independent of the gocui buffer.
++func (vm *LayerSetState) CursorUp() bool {
++	if vm.LayerIndex <= 0 {
++		return false
++	}
++	vm.LayerIndex--
++	if vm.LayerIndex < vm.viewStartIndex {
++		vm.viewStartIndex--
++	}
++	return true
++}
++
++// doCursorDown performs the internal view's adjustments on cursor down. Note: this is independent of the gocui buffer.
++func (vm *LayerSetState) CursorDown() bool {
++	if vm.LayerIndex >= len(vm.Layers) - 1 {
++		return false
++	}
++	vm.LayerIndex++
++	if vm.LayerIndex >= vm.viewStartIndex + vm.viewHeight {
++		vm.viewStartIndex++
++	}
++	return true
++}
++
++// renderCompareBar returns the formatted string for the given layer.
++func (vm *LayerSetState) renderCompareBar(layerIdx int) string {
++	bottomTreeStart, bottomTreeStop, topTreeStart, topTreeStop := vm.GetCompareIndexes()
++	result := "  "
++
++	if layerIdx >= bottomTreeStart && layerIdx <= bottomTreeStop {
++		result = format.CompareBottom("  ")
++	}
++	if layerIdx >= topTreeStart && layerIdx <= topTreeStop {
++		result = format.CompareTop("  ")
++	}
++
++	return result
++}
++
++// Update refreshes the state objects for future rendering
++func (vm *LayerSetState) Update(isConstrainedRealEstate bool) error {
++	vm.constrainedRealEstate = isConstrainedRealEstate
++	return nil
++}
++
++// Render flushes the state objects to the screen. The layers pane reports:
++// 1. the layers of the image surrounding the currently selected layer
++// 2. the current selected layer
++func (vm *LayerSetState) Render() error {
++	logrus.Tracef("viewmodel.LayerSetState.Render() %s", vm.Layers[vm.LayerIndex].Id)
++
++	// write contents of pane
++	vm.Buffer.Reset()
++	for idx, layer := range vm.Layers {
++		if idx < vm.viewStartIndex {
++			continue
++		}
++		if idx > vm.viewStartIndex + vm.viewHeight {
++			break
++		}
++		var layerStr string
++		if vm.constrainedRealEstate {
++			layerStr = fmt.Sprintf("%-4d", layer.Index)
++		} else {
++			layerStr = layer.String()
++		}
++
++		compareBar := vm.renderCompareBar(idx)
++
++		err := error(nil)
++		if idx == vm.LayerIndex {
++			_, err = fmt.Fprintln(&vm.Buffer, compareBar+" "+format.Selected(layerStr))
++		} else {
++			_, err = fmt.Fprintln(&vm.Buffer, compareBar+" "+layerStr)
++		}
++
++		if err != nil {
++			logrus.Debug("unable to write to buffer: ", err)
++			return err
++		}
+ 	}
++	return nil
+ }
+ 
+ // getCompareIndexes determines the layer boundaries to use for comparison (based on the current compare mode)
+
+From 326fb0d8c9094ac068a29fecd4f103783199392c Mon Sep 17 00:00:00 2001
+From: moaimullet <moaimullet@users.noreply.github.com>
+Date: Mon, 2 Oct 2023 00:40:30 -0700
+Subject: [PATCH 2/3] Fix missing render update for pgup/dn + few layers
+
+---
+ runtime/ui/viewmodel/layer_set_state.go | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/runtime/ui/viewmodel/layer_set_state.go b/runtime/ui/viewmodel/layer_set_state.go
+index 68365a09..317226cc 100644
+--- a/runtime/ui/viewmodel/layer_set_state.go
++++ b/runtime/ui/viewmodel/layer_set_state.go
+@@ -65,7 +65,7 @@ func (vm *LayerSetState) PageUp() bool {
+ 		vm.LayerIndex = 0
+ 		prevPageEndIndex = vm.viewHeight
+ 		if prevPageEndIndex >= len(vm.Layers) {
+-			return false
++			return true
+ 		}
+ 	}
+ 
+@@ -87,7 +87,7 @@ func (vm *LayerSetState) PageDown() bool {
+ 		vm.LayerIndex = nextPageEndIndex
+ 		nextPageStartIndex = nextPageEndIndex - vm.viewHeight + 1
+ 		if (nextPageStartIndex < 0) {
+-			return false
++			return true
+ 		}
+ 	}
+ 
+@@ -96,7 +96,7 @@ func (vm *LayerSetState) PageDown() bool {
+ 	if vm.LayerIndex < nextPageStartIndex {
+ 		vm.LayerIndex = nextPageStartIndex
+ 	}
+-	
++
+ 	return true
+ }

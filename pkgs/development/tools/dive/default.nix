@@ -2,7 +2,6 @@
 , stdenv
 , buildGoModule
 , fetchFromGitHub
-, fetchpatch
 , pkg-config
 , btrfs-progs
 , gpgme
@@ -25,6 +24,7 @@ buildGoModule rec {
   nativeBuildInputs = [ pkg-config ];
 
   buildInputs = lib.optionals stdenv.isLinux [ btrfs-progs gpgme lvm2 ];
+  patches = [ ./scrolling.patch ];
 
   ldflags = [ "-s" "-w" "-X main.version=${version}" ];
 
