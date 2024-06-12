@@ -6,6 +6,7 @@
 , dpkg
 , fetchurl
 , gtk3
+, installShellFiles
 , libpcap
 , makeDesktopItem
 , makeWrapper
@@ -34,6 +35,7 @@ stdenv.mkDerivation rec {
     autoPatchelfHook
     makeWrapper
     copyDesktopItems
+    installShellFiles
   ];
 
   buildInputs = [
@@ -78,6 +80,10 @@ stdenv.mkDerivation rec {
 
   postInstall = ''
     wrapProgram $out/bin/warp-svc --prefix PATH : ${lib.makeBinPath [ nftables ]}
+    installShellCompletion --cmd warp-cli \
+      --bash <($out/bin/warp-cli generate-completions bash) \
+      --fish <($out/bin/warp-cli generate-completions fish) \
+      --zsh <($out/bin/warp-cli generate-completions zsh)
   '';
 
   meta = with lib; {
