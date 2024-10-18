@@ -10,7 +10,7 @@
 , gst_all_1
 , libglvnd
 , darwin
-, apple-sdk_15
+, apple-sdk_14
 , apple-sdk_12
 , darwinMinVersionHook
 , buildPackages
@@ -34,7 +34,7 @@ let
       # Per <https://doc.qt.io/qt-6/macos.html#supported-versions>.
       # This should reflect the lowest “Target Platform” and the
       # highest “Build Environment”.
-      apple-sdk_qt = apple-sdk_15;
+      apple-sdk_qt = apple-sdk_14;
       darwinDeploymentTargetDeps = [
         apple-sdk_12
         (darwinMinVersionHook "12.0")

@@ -143,6 +143,8 @@ qtModule {
       --replace "AppleClang" "Clang"
     substituteInPlace cmake/Functions.cmake \
       --replace "/usr/bin/xcrun" "${xcbuild}/bin/xcrun"
+    substituteInPlace src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/metal/metal_backend.gni \
+      --replace-fail 'angle_has_build && !is_ios && target_os == host_os' 'false'
   '';
 
   cmakeFlags = [
