@@ -50,7 +50,6 @@ let
     ]
     ++ [
       # These have to happen last.
-      (callPackage ./common/rewrite-sdk-paths.nix { inherit sdkVersion; })
       (callPackage ./common/run-build-phase-hooks.nix { })
     ]
   );
