@@ -54,6 +54,7 @@ lib:
   lib,
   libseccomp,
   makeWrapper,
+  nftables,
   nixosTests,
   pkg-config,
   pkgsBuildBuild,
@@ -366,6 +367,7 @@ buildGoModule rec {
     ipset
     bridge-utils
     ethtool
+    nftables
     util-linux # kubelet wants 'nsenter' from util-linux: https://github.com/kubernetes/kubernetes/issues/26093#issuecomment-705994388
     conntrack-tools
     runc
