@@ -116,7 +116,6 @@ let
         TermReadKey
         Test2Harness
         TestPostgreSQL
-        TestSimple13
         TextDiff
         TextTable
         UUID4Tiny
