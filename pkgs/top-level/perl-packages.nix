@@ -34958,10 +34958,10 @@ with self;
 
   TestRun = buildPerlModule {
     pname = "Test-Run";
-    version = "0.0305";
+    version = "0.0306";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Test-Run-0.0305.tar.gz";
-      hash = "sha256-+Jpx3WD44qd26OYBd8ntXlkJbUAF1QvSmJuSeeCHwkg=";
+      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Test-Run-0.0306.tar.gz";
+      hash = "sha256-q2CgUpk3K2l8L1adkyCKz5tBKcxmAzYbyRNMgvkQkfw=";
     };
     buildInputs = [ TestTrap ];
     propagatedBuildInputs = [
