@@ -20153,10 +20153,10 @@ with self;
 
   MailDMARC = buildPerlPackage {
     pname = "Mail-DMARC";
-    version = "1.20230215";
+    version = "1.20250805";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MB/MBRADSHAW/Mail-DMARC-1.20230215.tar.gz";
-      hash = "sha256-V9z1R1nLkkSOVukUE0D2E0QnTFjZ3WWqkKqczw5+uQM=";
+      url = "mirror://cpan/authors/id/M/MS/MSIMERSON/Mail-DMARC-1.20250805.tar.gz";
+      hash = "sha256-VO3BpFz8vQmSvkH7AgWcQEt7hxxSSnGUlQjSEyjTgFc=";
     };
     buildInputs = [
       ExtUtilsMakeMaker
