@@ -28041,10 +28041,10 @@ with self;
 
   Plack = buildPerlPackage {
     pname = "Plack";
-    version = "1.0050";
+    version = "1.0051";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MI/MIYAGAWA/Plack-1.0050.tar.gz";
-      hash = "sha256-0mUa3oLrv/er4KOhifyTLa3Ed5GGzolGjlbQGJ6qbtQ=";
+      url = "mirror://cpan/authors/id/M/MI/MIYAGAWA/Plack-1.0051.tar.gz";
+      hash = "sha256-vr3pHEIpjtbsjmyCshQzobSao5QSwkfzkFuA+VWs93s=";
     };
     buildInputs = [
       AuthenSimplePasswd
