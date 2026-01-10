@@ -33614,10 +33614,10 @@ with self;
 
   TestCompile = buildPerlModule {
     pname = "Test-Compile";
-    version = "3.3.1";
+    version = "3.3.3";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/E/EG/EGILES/Test-Compile-v3.3.1.tar.gz";
-      hash = "sha256-gIRQ89Ref0GapNZo4pgodonp6jY4hpO/8YDXhwzj5iE=";
+      url = "mirror://cpan/authors/id/E/EG/EGILES/Test-Compile-v3.3.3.tar.gz";
+      hash = "sha256-3zqzDstRrhShqpufwUMkyWnMJY7yrazDW8aBlBEtpoU=";
     };
     propagatedBuildInputs = [ UNIVERSALrequire ];
     meta = {
