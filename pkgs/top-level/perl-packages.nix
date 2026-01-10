@@ -34038,10 +34038,10 @@ with self;
 
   TestFutureIOImpl = buildPerlModule {
     pname = "Test-Future-IO-Impl";
-    version = "0.14";
+    version = "0.16";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PE/PEVANS/Test-Future-IO-Impl-0.14.tar.gz";
-      hash = "sha256-AH22GdPUljQyXFbvvKDh5Vdt0z95RV8t6llb5u344jU=";
+      url = "mirror://cpan/authors/id/P/PE/PEVANS/Test-Future-IO-Impl-0.16.tar.gz";
+      hash = "sha256-5SsxcQWc0EODLOLBEANviTS9CDebvfEC5W9YIEmY+Wg=";
     };
     propagatedBuildInputs = [ Test2Suite ];
     meta = {
