@@ -12224,10 +12224,10 @@ with self;
 
   EV = buildPerlPackage {
     pname = "EV";
-    version = "4.34";
+    version = "4.36";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/ML/MLEHMANN/EV-4.34.tar.gz";
-      hash = "sha256-EhFoPc57Z3H0q3EMwVNxK913umFXoTKU0LtzSR/QZWA=";
+      url = "mirror://cpan/authors/id/M/ML/MLEHMANN/EV-4.36.tar.gz";
+      hash = "sha256-OxrdcPfcFsLhkZUMYxk9x0XvxigHU7Dusqvgf/kzTHg=";
     };
     patches = [
       (fetchpatch {
