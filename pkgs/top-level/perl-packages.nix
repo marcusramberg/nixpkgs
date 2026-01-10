@@ -16189,7 +16189,7 @@ with self;
 
   HTMLRewriteAttributes = buildPerlPackage {
     pname = "HTML-RewriteAttributes";
-    version = "0.05";
+    version = "0.06";
     src = fetchurl {
       url = "mirror://cpan/authors/id/B/BP/BPS/HTML-RewriteAttributes-0.06.tar.gz";
       hash = "sha256-vGQgAmEUL5pffgeG3FqySmMwvBm9Hj6btLbXwxYhtyI=";
