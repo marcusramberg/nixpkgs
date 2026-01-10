@@ -30760,10 +30760,10 @@ with self;
 
   Specio = buildPerlPackage {
     pname = "Specio";
-    version = "0.48";
+    version = "0.53";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DR/DROLSKY/Specio-0.48.tar.gz";
-      hash = "sha256-DIV5NYDxJ07wgXMHkTHRAfd7IqzOp6+oJVIC8IEWgrI=";
+      url = "mirror://cpan/authors/id/D/DR/DROLSKY/Specio-0.53.tar.gz";
+      hash = "sha256-DQ7s+56JvQ9fcQ+sQuEgCogtUTqGL5hJfq71knrGwYM=";
     };
     propagatedBuildInputs = [
       DevelStackTrace
