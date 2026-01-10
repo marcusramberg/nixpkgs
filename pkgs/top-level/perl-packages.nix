@@ -32218,10 +32218,10 @@ with self;
 
   SyntaxKeywordJunction = buildPerlPackage {
     pname = "Syntax-Keyword-Junction";
-    version = "0.003008";
+    version = "0.003009";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/F/FR/FREW/Syntax-Keyword-Junction-0.003008.tar.gz";
-      hash = "sha256-i0l18hsZkqfmwt9dzJKyVMYZJVle3c368LFJhxeqle8=";
+      url = "mirror://cpan/authors/id/H/HA/HAARG/Syntax-Keyword-Junction-0.003009.tar.gz";
+      hash = "sha256-7NQswpJ9LtiegNdXHjS6RDdlFA5RIV1llYOo2knTGfA=";
     };
     buildInputs = [ TestRequires ];
     propagatedBuildInputs = [ syntax ];
