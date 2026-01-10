@@ -4288,10 +4288,10 @@ with self;
 
   Catmandu = buildPerlModule {
     pname = "Catmandu";
-    version = "1.2020";
+    version = "1.2025";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/H/HO/HOCHSTEN/Catmandu-1.2020.tar.gz";
-      hash = "sha256-1jIbR+NkGvkb7vZjNhWZVk88wzwAc5isa7opuO5A4cU=";
+      url = "mirror://cpan/authors/id/N/NI/NICS/Catmandu-1.2025.tar.gz";
+      hash = "sha256-BZWTaQJduyR7qG8bl0IzbGbFUZK5b19SWiJGlJlMp68=";
     };
     propagatedBuildInputs = [
       AnyURIEscape
