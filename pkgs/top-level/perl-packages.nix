@@ -1780,10 +1780,10 @@ with self;
 
   ArchiveTarWrapper = buildPerlPackage {
     pname = "Archive-Tar-Wrapper";
-    version = "0.38";
+    version = "0.42";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/A/AR/ARFREITAS/Archive-Tar-Wrapper-0.38.tar.gz";
-      hash = "sha256-GfPQ2qi5XP+2jHBDUN0GdKI+HS8U0DKQO36WCe23s3o=";
+      url = "mirror://cpan/authors/id/H/HA/HAARG/Archive-Tar-Wrapper-0.42.tar.gz";
+      hash = "sha256-asdROFZqY+Pa2QTGAvv5rdticVeluX77mk4Qm0Rjhv0=";
     };
     propagatedBuildInputs = [
       FileWhich
