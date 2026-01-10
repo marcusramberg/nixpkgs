@@ -37411,10 +37411,10 @@ with self;
 
   UnicodeUTF8 = buildPerlPackage {
     pname = "Unicode-UTF8";
-    version = "0.62";
+    version = "0.63";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/C/CH/CHANSEN/Unicode-UTF8-0.62.tar.gz";
-      hash = "sha256-+oci0LdGluMy/d1EKZRDbqk9O/x5gtS6vc7f3dZX0PY=";
+      url = "mirror://cpan/authors/id/C/CH/CHANSEN/Unicode-UTF8-0.63.tar.gz";
+      hash = "sha256-3RlEFlU41u7A+dFFQDS+s34ZZj26Bvh6fQY0WtQw+Yg=";
     };
     buildInputs = [ TestFatal ];
     meta = {
