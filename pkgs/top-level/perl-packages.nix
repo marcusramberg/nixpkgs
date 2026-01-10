@@ -11167,10 +11167,10 @@ with self;
 
   DistZillaPluginTestCPANChanges = buildPerlPackage {
     pname = "Dist-Zilla-Plugin-Test-CPAN-Changes";
-    version = "0.012";
+    version = "0.013";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DO/DOHERTY/Dist-Zilla-Plugin-Test-CPAN-Changes-0.012.tar.gz";
-      hash = "sha256-IVs6XDxYyLqw6icTBEG72uxzfuzADwZwk39gi9v2SAY=";
+      url = "mirror://cpan/authors/id/E/ET/ETHER/Dist-Zilla-Plugin-Test-CPAN-Changes-0.013.tar.gz";
+      hash = "sha256-tK5A9iioACjJBI0laqmSI5ZJN1n0KJU1TbkOynWVloQ=";
     };
     buildInputs = [
       CPANChanges
