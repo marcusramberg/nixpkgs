@@ -1280,10 +1280,10 @@ with self;
 
   AppMusicChordPro = buildPerlPackage {
     pname = "App-Music-ChordPro";
-    version = "6.050.7";
+    version = "6.090.1";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/J/JV/JV/App-Music-ChordPro-6.050.7.tar.gz";
-      hash = "sha256-tpNsqhoWOPIwprK3ou5tb9oXKih3HEQjm/2c5F9rOoQ=";
+      url = "mirror://cpan/authors/id/J/JV/JV/App-Music-ChordPro-6.090.1.tar.gz";
+      hash = "sha256-a0w1tmS932mPRNH0OQDCL1a4+wAESYhHK/Rj8AygE28=";
     };
     buildInputs = [ ObjectPad ];
     propagatedBuildInputs = [
