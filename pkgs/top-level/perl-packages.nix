@@ -22809,10 +22809,10 @@ with self;
 
   MojoJWT = buildPerlModule {
     pname = "Mojo-JWT";
-    version = "0.09";
+    version = "1.01";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/J/JB/JBERGER/Mojo-JWT-0.09.tar.gz";
-      hash = "sha256-wE4DmD4MbyvORdCOoucph5yWee+mNLDmjLa4t7SoWIY=";
+      url = "mirror://cpan/authors/id/J/JB/JBERGER/Mojo-JWT-1.01.tar.gz";
+      hash = "sha256-+py8R85JTwGgQuDznoc/j6XKXpFHK17MT7smPMO9Jgw=";
     };
     buildInputs = [ ModuleBuildTiny ];
     propagatedBuildInputs = [ Mojolicious ];
