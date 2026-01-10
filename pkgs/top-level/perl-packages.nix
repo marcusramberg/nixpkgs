@@ -18574,10 +18574,10 @@ with self;
 
   libwwwperl = buildPerlPackage {
     pname = "libwww-perl";
-    version = "6.72";
+    version = "6.81";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.72.tar.gz";
-      hash = "sha256-6bg1T9XiC+IHr+I93VhPzVm/gpmNwHfez2hLodrloF0=";
+      url = "mirror://cpan/authors/id/O/OA/OALDERS/libwww-perl-6.81.tar.gz";
+      hash = "sha256-qzBVLxlOi1rjrAiFEy/R1OoExMf+ZVV2W5jwGvcMFzY=";
     };
     buildInputs = [
       HTTPDaemon
