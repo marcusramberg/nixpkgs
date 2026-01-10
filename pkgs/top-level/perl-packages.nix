@@ -8880,10 +8880,10 @@ with self;
 
   DateTime = buildPerlPackage {
     pname = "DateTime";
-    version = "1.59";
+    version = "1.66";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DR/DROLSKY/DateTime-1.59.tar.gz";
-      hash = "sha256-3j6aY84VRwtNtK2tS6asjsKX2IwMbGs1SwgYg7CmdpU=";
+      url = "mirror://cpan/authors/id/D/DR/DROLSKY/DateTime-1.66.tar.gz";
+      hash = "sha256-r6vWhvuD0+v0nuRTl0+RIvPuybJf+NLd9PEt6Srx5eI=";
     };
     buildInputs = [
       CPANMetaCheck
