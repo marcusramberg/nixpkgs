@@ -31424,10 +31424,10 @@ with self;
 
   StringDiff = buildPerlModule {
     pname = "String-Diff";
-    version = "0.07";
+    version = "0.11";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/Y/YA/YAPPO/String-Diff-0.07.tar.gz";
-      hash = "sha256-chW2fLwyJuLQ4Ys47FjJO+C/YJAnhpi++VU0iCbNCvM=";
+      url = "mirror://cpan/authors/id/S/SC/SCHWIGON/String-Diff-0.11.tar.gz";
+      hash = "sha256-y3CmJjnI1aX1l4qcUOzDITwAZeUVsbaj83BsPtuEcz4=";
     };
     patches = [
       (fetchpatch {
