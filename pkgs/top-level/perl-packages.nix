@@ -28479,10 +28479,10 @@ with self;
 
   PPI = buildPerlPackage {
     pname = "PPI";
-    version = "1.277";
+    version = "1.284";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MI/MITHALDU/PPI-1.277.tar.gz";
-      hash = "sha256-h8efg7aHbiBgUZZdUBnSUHxVH4GahnUAgOx+xDsuCvg=";
+      url = "mirror://cpan/authors/id/O/OA/OALDERS/PPI-1.284.tar.gz";
+      hash = "sha256-jZHmbZENMJatSh+r2ISncMau3i8DTU1eVgBhfsgzu9M=";
     };
 
     # override default postPatch to avoid patchShebangs breaking tests
