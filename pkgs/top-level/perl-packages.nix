@@ -25732,10 +25732,10 @@ with self;
 
   NetOAuth = buildPerlModule {
     pname = "Net-OAuth";
-    version = "0.28";
+    version = "0.31";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/K/KG/KGRENNAN/Net-OAuth-0.28.tar.gz";
-      hash = "sha256-e/wxnaCsV44Ali81o1DPUREKOjEwFtH9wwciAooikEw=";
+      url = "mirror://cpan/authors/id/R/RR/RRWO/Net-OAuth-0.31.tar.gz";
+      hash = "sha256-wncPAoJp/NtlFQ8rsxP4pva13vTuIbVhn1y/pAMbfFQ=";
     };
     buildInputs = [ TestWarn ];
     propagatedBuildInputs = [
