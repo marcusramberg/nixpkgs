@@ -21449,10 +21449,10 @@ with self;
 
   MIMETools = buildPerlPackage {
     pname = "MIME-tools";
-    version = "5.509";
+    version = "5.515";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DS/DSKOLL/MIME-tools-5.509.tar.gz";
-      hash = "sha256-ZFefDJI9gdmiGUWG5Hw0dVGeJkbktcECqJIHWfrPaXM=";
+      url = "mirror://cpan/authors/id/D/DS/DSKOLL/MIME-tools-5.515.tar.gz";
+      hash = "sha256-wbod2fCyzYKg51yu3sUeSCM/nwHcKaCXG9/xy1O+kBM=";
     };
     propagatedBuildInputs = [ MailTools ];
     buildInputs = [ TestDeep ];
