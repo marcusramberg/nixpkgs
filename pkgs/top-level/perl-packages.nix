@@ -20099,10 +20099,10 @@ with self;
 
   MacPropertyList = buildPerlPackage {
     pname = "Mac-PropertyList";
-    version = "1.504";
+    version = "1.605";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BD/BDFOY/Mac-PropertyList-1.504.tar.gz";
-      hash = "sha256-aIl96Yw2j76c22iF1H3qADxG7Ho3MmNSPvZkVwc7eq4=";
+      url = "mirror://cpan/authors/id/B/BR/BRIANDFOY/Mac-PropertyList-1.605.tar.gz";
+      hash = "sha256-zR4Y9IqqVwpBKOTLTXLoNSu9hUAx9J2NPQ14mQAvLyY=";
     };
     propagatedBuildInputs = [ XMLEntities ];
     meta = {
