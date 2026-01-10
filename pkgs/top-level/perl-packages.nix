@@ -6558,10 +6558,10 @@ with self;
 
   CPANAudit = buildPerlPackage {
     pname = "CPAN-Audit";
-    version = "20230826.001";
+    version = "20250829.001";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BD/BDFOY/CPAN-Audit-20230826.001.tar.gz";
-      hash = "sha256-DXU7O9fdpXweIKycWScKcKTNkfttfN4mJEPoVUy2Geo=";
+      url = "mirror://cpan/authors/id/B/BR/BRIANDFOY/CPAN-Audit-20250829.001.tar.gz";
+      hash = "sha256-7HEaInfgHcgTlU38aY/8Lb/Kg8fhYlLP37pzM7Es1QI=";
     };
     buildInputs = [
       CaptureTiny
