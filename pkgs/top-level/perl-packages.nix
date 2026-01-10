@@ -17266,10 +17266,10 @@ with self;
 
   IOAsync = buildPerlModule {
     pname = "IO-Async";
-    version = "0.802";
+    version = "0.804";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PE/PEVANS/IO-Async-0.802.tar.gz";
-      hash = "sha256-5YJzFXd2fEfqxDXvKQRmPUp1Cw5oAqSmGJo38Mswhzg";
+      url = "mirror://cpan/authors/id/P/PE/PEVANS/IO-Async-0.804.tar.gz";
+      hash = "sha256-kGFUMpGBZM1vnm3CUhGVpFiWBv/QF+A9Wql/QH05xJQ=";
     };
     preCheck = "rm t/50resolver.t"; # this test fails with "Temporary failure in name resolution" in sandbox
     propagatedBuildInputs = [
