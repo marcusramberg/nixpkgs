@@ -10234,10 +10234,10 @@ with self;
 
   DBIxClassSchemaLoader = buildPerlPackage {
     pname = "DBIx-Class-Schema-Loader";
-    version = "0.07051";
+    version = "0.07053";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/V/VE/VEESH/DBIx-Class-Schema-Loader-0.07051.tar.gz";
-      hash = "sha256-GgieUISlJ2j0J0vCGB3LrhTcxXnk2YD89WnGeBsGCSw=";
+      url = "mirror://cpan/authors/id/V/VE/VEESH/DBIx-Class-Schema-Loader-0.07053.tar.gz";
+      hash = "sha256-yfjL6/ytwZtkB6FZj9j5p6gbyvZ7euTod5Bq+FukSxQ=";
     };
     buildInputs = [
       DBDSQLite
