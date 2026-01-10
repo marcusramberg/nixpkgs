@@ -1570,10 +1570,10 @@ with self;
 
   ArchiveLibarchivePeek = buildPerlPackage {
     pname = "Archive-Libarchive-Peek";
-    version = "0.04";
+    version = "0.05";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PL/PLICEASE/Archive-Libarchive-Peek-0.04.tar.gz";
-      hash = "sha256-DYhJ4xG2RsozWz6gGodTtAIkK5XOgAo7zNXHCC4nJPo=";
+      url = "mirror://cpan/authors/id/P/PL/PLICEASE/Archive-Libarchive-Peek-0.05.tar.gz";
+      hash = "sha256-LwdJw1+PuvEN1WBu1tSWrdCiVAWYKmWlZrLTS6mLQKE=";
     };
     buildInputs = [
       Filechdir
