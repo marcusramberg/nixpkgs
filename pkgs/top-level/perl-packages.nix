@@ -20132,10 +20132,10 @@ with self;
 
   MailAuthenticationResults = buildPerlPackage {
     pname = "Mail-AuthenticationResults";
-    version = "2.20230112";
+    version = "2.20250709";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20230112.tar.gz";
-      hash = "sha256-wtFEyuAiX4vJ0PX60cPxOdJ89TT85+rHB2T79m/SI0E=";
+      url = "mirror://cpan/authors/id/M/MB/MBRADSHAW/Mail-AuthenticationResults-2.20250709.tar.gz";
+      hash = "sha256-yoVoY4p4OUF+BDMsaRXUx6VUlr7yEvr/TVmpO6nrTsA=";
     };
     buildInputs = [ TestException ];
     propagatedBuildInputs = [
