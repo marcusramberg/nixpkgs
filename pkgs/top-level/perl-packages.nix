@@ -14482,10 +14482,10 @@ with self;
 
   GamesSolitaireVerify = buildPerlModule {
     pname = "Games-Solitaire-Verify";
-    version = "0.2403";
+    version = "0.2601";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Games-Solitaire-Verify-0.2403.tar.gz";
-      hash = "sha256-5atHXIK6HLCIrSj0I8pRTUaUTWrjw+tV6WNunn8dyJM=";
+      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Games-Solitaire-Verify-0.2601.tar.gz";
+      hash = "sha256-MrIOVgxLeMiZoWl+9cGH8nJt+esQ5IRWMGh+hUmO9XM=";
     };
     buildInputs = [
       DirManifest
