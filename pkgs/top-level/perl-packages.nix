@@ -24944,10 +24944,10 @@ with self;
 
   NetAmazonS3 = buildPerlPackage {
     pname = "Net-Amazon-S3";
-    version = "0.991";
+    version = "0.992";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BA/BARNEY/Net-Amazon-S3-0.991.tar.gz";
-      hash = "sha256-+3r4umSUjRo/MdgJ13EFImiA8GmYrH8Rn4JITmijI9M=";
+      url = "mirror://cpan/authors/id/B/BA/BARNEY/Net-Amazon-S3-0.992.tar.gz";
+      hash = "sha256-S3s7dilZULYO1EGENsc2Ph/Z/y3gnIxhwmUpZGjGuWw=";
     };
     patches = [
       (fetchpatch {
