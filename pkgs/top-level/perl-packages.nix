@@ -1415,11 +1415,11 @@ with self;
   };
 
   AppSqitch = buildPerlModule {
-    version = "1.5.2";
+    version = "1.6.1";
     pname = "App-Sqitch";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DW/DWHEELER/App-Sqitch-v1.5.2.tar.gz";
-      hash = "sha256-horqXNSz6uDPrKiXK546ag+PmYiEjVNazstJVbAovNE=";
+      url = "mirror://cpan/authors/id/D/DW/DWHEELER/App-Sqitch-v1.6.1.tar.gz";
+      hash = "sha256-yC+vmRKOWzMD7jyOhaMZDwC8kVAuORlgDdwfSV9xNHQ=";
     };
     buildInputs = [
       CaptureTiny
