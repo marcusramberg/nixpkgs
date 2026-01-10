@@ -29521,10 +29521,10 @@ with self;
 
   PodWeaver = buildPerlPackage {
     pname = "Pod-Weaver";
-    version = "4.019";
+    version = "4.020";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RJ/RJBS/Pod-Weaver-4.019.tar.gz";
-      hash = "sha256-aUatHwTq+aoR8kzFRJTh1Xli9Y4FkS82S3T5WT595/c=";
+      url = "mirror://cpan/authors/id/R/RJ/RJBS/Pod-Weaver-4.020.tar.gz";
+      hash = "sha256-ZV/PJhIGwa28MDiYF5CxFsMVCEhRNcZICTuZs7PeCdI=";
     };
     buildInputs = [
       PPI
