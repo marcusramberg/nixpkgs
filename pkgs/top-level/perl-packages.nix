@@ -35090,10 +35090,10 @@ with self;
 
   TestRunPluginTrimDisplayedFilenames = buildPerlModule {
     pname = "Test-Run-Plugin-TrimDisplayedFilenames";
-    version = "0.0126";
+    version = "0.0127";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Test-Run-Plugin-TrimDisplayedFilenames-0.0126.tar.gz";
-      hash = "sha256-ioZJw8anmIp3N65KcW1g4MazIXMBtAFT6tNquPTqkCg=";
+      url = "mirror://cpan/authors/id/S/SH/SHLOMIF/Test-Run-Plugin-TrimDisplayedFilenames-0.0127.tar.gz";
+      hash = "sha256-1mGR4s+zqhaveSduktJbeGdeHPGm6H/5F9k/+K3q0Mg=";
     };
     buildInputs = [
       TestRun
