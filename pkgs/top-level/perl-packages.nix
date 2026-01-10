@@ -7600,10 +7600,10 @@ with self;
 
   CryptOpenSSLRandom = buildPerlPackage {
     pname = "Crypt-OpenSSL-Random";
-    version = "0.15";
+    version = "0.17";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RU/RURBAN/Crypt-OpenSSL-Random-0.15.tar.gz";
-      hash = "sha256-8IdvqhujER45uGqnMMYDIR7/KQXkYMcqV7YejPR1zvQ=";
+      url = "mirror://cpan/authors/id/R/RU/RURBAN/Crypt-OpenSSL-Random-0.17.tar.gz";
+      hash = "sha256-pXGyQYG6qnbJZwTpKs/8aTT/WT44Da3idNtOQ8FArVE=";
     };
     env.NIX_CFLAGS_COMPILE = "-I${pkgs.openssl.dev}/include";
     NIX_CFLAGS_LINK = "-L${lib.getLib pkgs.openssl}/lib -lcrypto";
