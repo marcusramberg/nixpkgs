@@ -10954,10 +10954,10 @@ with self;
 
   DistZilla = buildPerlPackage {
     pname = "Dist-Zilla";
-    version = "6.030";
+    version = "6.036";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RJ/RJBS/Dist-Zilla-6.030.tar.gz";
-      hash = "sha256-xAa75oCelO23DKlDJMMBQz1sij375wsC3xLh3/LzsTA=";
+      url = "mirror://cpan/authors/id/R/RJ/RJBS/Dist-Zilla-6.036.tar.gz";
+      hash = "sha256-+rvce3y8eEwF18VCzVrQYZTtMJi0JkJLGBNOZ8uz3rg=";
     };
     buildInputs = [
       CPANMetaCheck
