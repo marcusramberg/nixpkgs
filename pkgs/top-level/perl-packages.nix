@@ -9755,10 +9755,10 @@ with self;
 
   DBDMariaDB = buildPerlPackage {
     pname = "DBD-MariaDB";
-    version = "1.23";
+    version = "1.24";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PA/PALI/DBD-MariaDB-1.23.tar.gz";
-      hash = "sha256-DQx2xmDd1VVw5I8+L96o9iGmmsDtSBkOjPyvy16bhZ0=";
+      url = "mirror://cpan/authors/id/P/PA/PALI/DBD-MariaDB-1.24.tar.gz";
+      hash = "sha256-+XeiW0EWoKlafIqJT9Nwl6vhmvmmqe1NgAYE7BeHP+Q=";
     };
     nativeBuildInputs = [ pkgs.mariadb-connector-c ];
     buildInputs = [
