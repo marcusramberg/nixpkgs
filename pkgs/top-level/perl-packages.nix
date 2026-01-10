@@ -14508,10 +14508,10 @@ with self;
 
   GD = buildPerlPackage {
     pname = "GD";
-    version = "2.78";
+    version = "2.84";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RU/RURBAN/GD-2.78.tar.gz";
-      hash = "sha256-aDEFS/VCS09cI9NifT0UhEgPb5wsZmMiIpFfKFG+buQ=";
+      url = "mirror://cpan/authors/id/R/RU/RURBAN/GD-2.84.tar.gz";
+      hash = "sha256-PP5Nsgwhjrjj1nDy5bdXHxzIotD9VWEbs8+tOjM1Vk8=";
     };
 
     nativeBuildInputs = [
