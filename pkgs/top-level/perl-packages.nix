@@ -11773,10 +11773,10 @@ with self;
 
   EmailSend = buildPerlPackage {
     pname = "Email-Send";
-    version = "2.201";
+    version = "2.202";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RJ/RJBS/Email-Send-2.201.tar.gz";
-      hash = "sha256-S77JM1WNfMm4FSutht0xPeJ3ohqJtOqD2E5hWH6V28Y=";
+      url = "mirror://cpan/authors/id/R/RJ/RJBS/Email-Send-2.202.tar.gz";
+      hash = "sha256-8DZJ94VqQdOdU6foJ3SSmICYLDx1dPQaXK+so9wVyJY=";
     };
     propagatedBuildInputs = [
       EmailAbstract
