@@ -1228,10 +1228,10 @@ with self;
 
   Appcpm = buildPerlModule {
     pname = "App-cpm";
-    version = "0.997018";
+    version = "0.998003";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SK/SKAJI/App-cpm-0.997018.tar.gz";
-      hash = "sha256-ePvZawR9A4O2p/iJWxk/CziworVQuS8YwH91Lql8Tv0=";
+      url = "mirror://cpan/authors/id/S/SK/SKAJI/App-cpm-0.998003.tar.gz";
+      hash = "sha256-0VsXJBoH/tEe1KkXu+ANIxfpSsUqw47pKpysuzRq2xY=";
     };
     buildInputs = [ ModuleBuildTiny ];
     propagatedBuildInputs = [
