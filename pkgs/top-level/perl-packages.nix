@@ -7503,10 +7503,10 @@ with self;
 
   CryptOpenPGP = buildPerlPackage {
     pname = "Crypt-OpenPGP";
-    version = "1.12";
+    version = "1.19";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SR/SROMANOV/Crypt-OpenPGP-1.12.tar.gz";
-      hash = "sha256-6Kf/Kpk7dqaa1t/9vlV1W+Vni4Tm7ElNzZq5Zvdm9Q4=";
+      url = "mirror://cpan/authors/id/T/TI/TIMLEGGE/Crypt-OpenPGP-1.19.tar.gz";
+      hash = "sha256-9FkoZNIZ10zQGqarlEm1ytq0SbWkEOu3rk2DL/v2rCo=";
     };
     patches = [
       # See https://github.com/NixOS/nixpkgs/pull/93599
