@@ -28936,10 +28936,10 @@ with self;
 
   PerlMinimumVersion = buildPerlPackage {
     pname = "Perl-MinimumVersion";
-    version = "1.40";
+    version = "1.44";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DB/DBOOK/Perl-MinimumVersion-1.40.tar.gz";
-      hash = "sha256-dYmleMtg1wykdVw5WzWStECgzWobB05OzqyTsDGhvpA=";
+      url = "mirror://cpan/authors/id/D/DB/DBOOK/Perl-MinimumVersion-1.44.tar.gz";
+      hash = "sha256-/6nIovCZZgqBNh64usVqM1eTs+Fg+lsdlweLgxQs6Ms=";
     };
     buildInputs = [ TestScript ];
     propagatedBuildInputs = [
