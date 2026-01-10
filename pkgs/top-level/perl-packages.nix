@@ -20271,10 +20271,10 @@ with self;
 
   MailMessage = buildPerlPackage {
     pname = "Mail-Message";
-    version = "3.013";
+    version = "4.01";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MA/MARKOV/Mail-Message-3.013.tar.gz";
-      hash = "sha256-yK1YiNsBWkUOti7Cqj6mbcLdwRtwpdtsjKGn+fgg6B8=";
+      url = "mirror://cpan/authors/id/M/MA/MARKOV/Mail-Message-4.01.tar.gz";
+      hash = "sha256-yR8QL0WaGj8vnzXp4WnjnZBGBfx67lxXFddgMiR8IXY=";
     };
     propagatedBuildInputs = [
       IOStringy
