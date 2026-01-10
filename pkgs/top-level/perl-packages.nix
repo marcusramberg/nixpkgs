@@ -32237,10 +32237,10 @@ with self;
 
   SyntaxKeywordTry = buildPerlModule {
     pname = "Syntax-Keyword-Try";
-    version = "0.30";
+    version = "0.31";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PE/PEVANS/Syntax-Keyword-Try-0.30.tar.gz";
-      hash = "sha256-8Gjwuccf/4/vbYqentaVHLelK5djIr2VUYHMXnsX5pI=";
+      url = "mirror://cpan/authors/id/P/PE/PEVANS/Syntax-Keyword-Try-0.31.tar.gz";
+      hash = "sha256-e8YkLXRjeJgqWZs03jXwfT3syeCdVkb4+juH9FlBSko=";
     };
     buildInputs = [ Test2Suite ];
     propagatedBuildInputs = [ XSParseKeyword ];
