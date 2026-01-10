@@ -21257,10 +21257,10 @@ with self;
 
   MetaCPANClient = buildPerlPackage {
     pname = "MetaCPAN-Client";
-    version = "2.030000";
+    version = "2.037000";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MI/MICKEY/MetaCPAN-Client-2.030000.tar.gz";
-      hash = "sha256-2bdlxSN3VPFyYmljgqc4XZCy0BmGl5gXhisWZLBt068=";
+      url = "mirror://cpan/authors/id/M/MI/MICKEY/MetaCPAN-Client-2.037000.tar.gz";
+      hash = "sha256-Y8bqoEUtE+J6f3/8Yld85zsK5qqI/HvphcOghdp8P+g=";
     };
 
     # Most tests are online, so we only include offline tests
