@@ -37541,10 +37541,10 @@ with self;
 
   UserIdentity = buildPerlPackage {
     pname = "User-Identity";
-    version = "1.02";
+    version = "4.00";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MA/MARKOV/User-Identity-1.02.tar.gz";
-      hash = "sha256-OySu5/UnjGXD8EEVsHyG5kaTTpnqQJJANj8wiZE+uJk=";
+      url = "mirror://cpan/authors/id/M/MA/MARKOV/User-Identity-4.00.tar.gz";
+      hash = "sha256-RuxVxLLBWPueO9XGOqoQaV/uhQjvTslYd03Y6syrOEc=";
     };
     propagatedBuildInputs = [ HashOrdered ];
     meta = {
