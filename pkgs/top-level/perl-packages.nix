@@ -7846,10 +7846,10 @@ with self;
 
   Curses = buildPerlPackage {
     pname = "Curses";
-    version = "1.44";
+    version = "1.45";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/G/GI/GIRAFFED/Curses-1.44.tar.gz";
-      hash = "sha256-ou+4x8iG1pL/xNshNhx2gJoGXliOQ/rQ1n5E751CvTA=";
+      url = "mirror://cpan/authors/id/G/GI/GIRAFFED/Curses-1.45.tar.gz";
+      hash = "sha256-hCIeABOi1koLrmoyu0Sxrlc00ssEZfuJrz46vW4FrrI=";
     };
     preConfigure = ''
       substituteInPlace makeConfig \
