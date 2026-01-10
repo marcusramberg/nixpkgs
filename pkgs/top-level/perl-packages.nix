@@ -26564,10 +26564,10 @@ with self;
 
   OpenGL = buildPerlPackage rec {
     pname = "OpenGL";
-    version = "0.70";
+    version = "0.7006";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/C/CH/CHM/OpenGL-0.70.tar.gz";
-      hash = "sha256-sg4q9EBLSQGrNbumrV46iqYL/3JBPJkojwEBjEz4dOA=";
+      url = "mirror://cpan/authors/id/E/ET/ETJ/OpenGL-0.7006.tar.gz";
+      hash = "sha256-aaFYchO39BTloqfCiZ8xuR/WgcBVos7iOsTbky1n1Vc=";
     };
 
     # FIXME: try with libGL + libGLU instead of libGLU libGL
