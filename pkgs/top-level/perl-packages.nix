@@ -1115,10 +1115,10 @@ with self;
 
   AppCmd = buildPerlPackage {
     pname = "App-Cmd";
-    version = "0.336";
+    version = "0.338";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RJ/RJBS/App-Cmd-0.336.tar.gz";
-      hash = "sha256-35ZrV9WauxluADBIheW/EXypWBgq4/Tu3xchjqKDjoE=";
+      url = "mirror://cpan/authors/id/R/RJ/RJBS/App-Cmd-0.338.tar.gz";
+      hash = "sha256-YA2pKSsiGT+LctG42/CvE9IB7cxzqCkogkYVUOjbUiE=";
     };
     buildInputs = [ TestFatal ];
     propagatedBuildInputs = [
