@@ -9848,11 +9848,11 @@ with self;
 
   DBDPg = buildPerlPackage {
     pname = "DBD-Pg";
-    version = "3.17.0";
+    version = "3.18.0";
 
     src = fetchurl {
-      url = "mirror://cpan/authors/id/T/TU/TURNSTEP/DBD-Pg-3.17.0.tar.gz";
-      hash = "sha256-jZANTA50nzchh1KmZh+w01V6sfzMjeo4TLWHw4LeIZs=";
+      url = "mirror://cpan/authors/id/T/TU/TURNSTEP/DBD-Pg-3.18.0.tar.gz";
+      hash = "sha256-krvoo2MED4zmo/GWPxKBMuJFhhqbTcWoQXi0LWJaeAc=";
     };
 
     patches = [
