@@ -9470,10 +9470,10 @@ with self;
 
   DevelCheckOS = buildPerlPackage {
     pname = "Devel-CheckOS";
-    version = "1.96";
+    version = "2.04";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DC/DCANTRELL/Devel-CheckOS-1.96.tar.gz";
-      hash = "sha256-+GB5BfT1reSI9+9Et8HnyFI/ure5HS3IMLMa6cqBPfU=";
+      url = "mirror://cpan/authors/id/D/DC/DCANTRELL/Devel-CheckOS-2.04.tar.gz";
+      hash = "sha256-qUk9EN5j4zxQl/emnJqyvRHsY49T04RFgjSrRcEfndo=";
     };
     buildInputs = [ TestWarnings ];
     propagatedBuildInputs = [ FileFindRule ];
