@@ -1359,10 +1359,10 @@ with self;
 
   Appperlbrew = buildPerlModule {
     pname = "App-perlbrew";
-    version = "1.00";
+    version = "1.02";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/G/GU/GUGOD/App-perlbrew-1.00.tar.gz";
-      hash = "sha256-PKNFnK6f/VHef2i95CEtBx1hOLZEUo9izJDHikhSyss=";
+      url = "mirror://cpan/authors/id/G/GU/GUGOD/App-perlbrew-1.02.tar.gz";
+      hash = "sha256-JAZLInSBc3tl2V4tq1tne5DHIPjpoZ0oshUnKGF8JO0=";
     };
     buildInputs = [
       pkgs.curl
