@@ -9783,11 +9783,11 @@ with self;
 
   DBDmysql = buildPerlPackage {
     pname = "DBD-mysql";
-    version = "5.010";
+    version = "5.013";
 
     src = fetchurl {
-      url = "mirror://cpan/authors/id/D/DV/DVEEDEN/DBD-mysql-5.010.tar.gz";
-      hash = "sha256-LKL/Odk+idT3RG5fD68DgF6RZ+6bigS6fLJG4stG7uc=";
+      url = "mirror://cpan/authors/id/D/DV/DVEEDEN/DBD-mysql-5.013.tar.gz";
+      hash = "sha256-rrCm4cJvwopc9t4RYeDwVt3Ltzn4eVTbp8scWstOHDM=";
     };
 
     nativeBuildInputs = [
