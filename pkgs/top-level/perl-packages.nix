@@ -24249,10 +24249,10 @@ with self;
 
   MooseXTypesCommon = buildPerlModule {
     pname = "MooseX-Types-Common";
-    version = "0.001014";
+    version = "0.001015";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/E/ET/ETHER/MooseX-Types-Common-0.001014.tar.gz";
-      hash = "sha256-75Nxi20vJA1QtcOssadLTCoZGGllFHAAGoK+HzXQ7w8=";
+      url = "mirror://cpan/authors/id/E/ET/ETHER/MooseX-Types-Common-0.001015.tar.gz";
+      hash = "sha256-KzDiCzJRM7uv6QemK0yH93ymG7qhFwIqxWr5Tig1oxM=";
     };
     buildInputs = [
       ModuleBuildTiny
