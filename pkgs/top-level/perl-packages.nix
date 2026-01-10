@@ -27636,10 +27636,10 @@ with self;
 
   PerlCritic = buildPerlModule {
     pname = "Perl-Critic";
-    version = "1.150";
+    version = "1.156";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PE/PETDANCE/Perl-Critic-1.150.tar.gz";
-      hash = "sha256-5c2V3j5DvOcHdRdidLqkBfMm/IdA3wBUu4FpdcyNNJs=";
+      url = "mirror://cpan/authors/id/P/PE/PETDANCE/Perl-Critic-1.156.tar.gz";
+      hash = "sha256-Vyp8h1i6HAq22vC9QCl8Tw3PFRbwhFIt8sK/BNUl4jI=";
     };
     buildInputs = [ TestDeep ];
     propagatedBuildInputs = [
