@@ -31994,10 +31994,10 @@ with self;
 
   SubOverride = buildPerlPackage {
     pname = "Sub-Override";
-    version = "0.09";
+    version = "0.12";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/O/OV/OVID/Sub-Override-0.09.tar.gz";
-      hash = "sha256-k5pnwfcplo4MyBt0lY23UOG9t8AgvuGiYzMvQiwuJbU=";
+      url = "mirror://cpan/authors/id/M/MV/MVSJES/Sub-Override-0.12.tar.gz";
+      hash = "sha256-2SLcbvDlH2OF4RExCEXDOTvmt6TU69oqnkfAW/YveeM=";
     };
     buildInputs = [ TestFatal ];
     meta = {
