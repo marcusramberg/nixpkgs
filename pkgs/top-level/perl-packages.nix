@@ -19921,10 +19921,10 @@ with self;
 
   LWPProtocolHttps = buildPerlPackage {
     pname = "LWP-Protocol-https";
-    version = "6.11";
+    version = "6.14";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.11.tar.gz";
-      hash = "sha256-ATLdvwNmFWXKhQUPKlCU+5Jjy7w8yxpNnEGsm7CDuRc=";
+      url = "mirror://cpan/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.14.tar.gz";
+      hash = "sha256-Wc3qvyaVDU8b73DwlrDXfFscWnta0bZtcbaBuiecuyo=";
     };
     patches = [ ../development/perl-modules/lwp-protocol-https-cert-file.patch ];
     propagatedBuildInputs = [
