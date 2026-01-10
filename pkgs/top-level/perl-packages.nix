@@ -8413,10 +8413,10 @@ with self;
 
   DataRandom = buildPerlPackage {
     pname = "Data-Random";
-    version = "0.13";
+    version = "0.14";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BA/BAREFOOT/Data-Random-0.13.tar.gz";
-      hash = "sha256-61kBhKjbKKfknqsJ4l+GUMM/H2aLakcoKd50pTJWv8A=";
+      url = "mirror://cpan/authors/id/B/BA/BAREFOOT/Data-Random-0.14.tar.gz";
+      hash = "sha256-vsDh1TAaV3J+TjqfVlkNXapl6BvjAn7LxBQcBPqHGBg=";
     };
     buildInputs = [
       FileShareDirInstall
