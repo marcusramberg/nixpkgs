@@ -14690,10 +14690,10 @@ with self;
 
   GetoptLongDescriptive = buildPerlPackage {
     pname = "Getopt-Long-Descriptive";
-    version = "0.114";
+    version = "0.116";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.114.tar.gz";
-      hash = "sha256-QQ6EIRSpy/0/06X9JIqWcDwHxdh5sqpfnbAzPyMnYBY=";
+      url = "mirror://cpan/authors/id/R/RJ/RJBS/Getopt-Long-Descriptive-0.116.tar.gz";
+      hash = "sha256-k72IFzybmcM4CFqKcCIuuxwOutXF/q4fdCl0pMKcgso=";
     };
     buildInputs = [
       CPANMetaCheck
