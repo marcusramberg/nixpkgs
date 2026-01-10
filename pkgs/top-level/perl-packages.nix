@@ -19811,10 +19811,10 @@ with self;
 
   LongJump = buildPerlPackage {
     pname = "Long-Jump";
-    version = "0.000001";
+    version = "0.000003";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/E/EX/EXODIST/Long-Jump-0.000001.tar.gz";
-      hash = "sha256-1dZFbYaZK1Wdj2b8kJYPkZKSzTgDwTQD+qxXV2LHevQ=";
+      url = "mirror://cpan/authors/id/E/EX/EXODIST/Long-Jump-0.000003.tar.gz";
+      hash = "sha256-W0rvEiHdo92XCOe42nP/2LjbvPVxcmrGz6EVWgw4IGQ=";
     };
     buildInputs = [ Test2Suite ];
     meta = {
