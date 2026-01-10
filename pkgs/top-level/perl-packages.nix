@@ -24683,10 +24683,10 @@ with self;
 
   MusicBrainz = buildPerlModule {
     pname = "WebService-MusicBrainz";
-    version = "1.0.6";
+    version = "1.0.7";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BF/BFAIST/WebService-MusicBrainz-1.0.6.tar.gz";
-      hash = "sha256-XpH1ZZZ3w5CJv28lO0Eoe7zTVh9qJaB5Zc6DsmKIUuE=";
+      url = "mirror://cpan/authors/id/B/BF/BFAIST/WebService-MusicBrainz-1.0.7.tar.gz";
+      hash = "sha256-bVhV8DF1Qamlo0emEdJDhPj4YVX3FevoyCc/MX2ESiE=";
     };
     propagatedBuildInputs = [ Mojolicious ];
     doCheck = false; # Test performs network access.
