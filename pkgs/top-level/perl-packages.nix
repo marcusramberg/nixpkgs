@@ -18307,11 +18307,11 @@ with self;
   };
 
   Later = buildPerlPackage {
-    version = "0.21";
+    version = "4.00";
     pname = "Object-Realize-Later";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/M/MA/MARKOV/Object-Realize-Later-0.21.tar.gz";
-      hash = "sha256-j3uWQMyONOqSvPbAEEmgPBReDrRuViJ14o3d06jW2Nk=";
+      url = "mirror://cpan/authors/id/M/MA/MARKOV/Object-Realize-Later-4.00.tar.gz";
+      hash = "sha256-xHU9WjXxR+7eCc29Xm1ifd472qq/6eVvLP9yty0Zl5s=";
     };
     meta = {
       description = "Delayed creation of objects";
