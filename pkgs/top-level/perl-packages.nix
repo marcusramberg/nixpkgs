@@ -3281,10 +3281,10 @@ with self;
 
   CatalystAuthenticationCredentialHTTP = buildPerlModule {
     pname = "Catalyst-Authentication-Credential-HTTP";
-    version = "1.018";
+    version = "1.019";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/E/ET/ETHER/Catalyst-Authentication-Credential-HTTP-1.018.tar.gz";
-      hash = "sha256-b6GBbe5kSw216gzBXF5xHcLO0gg2JavOcJZSHx1lpSk=";
+      url = "mirror://cpan/authors/id/A/AB/ABRAXXA/Catalyst-Authentication-Credential-HTTP-1.019.tar.gz";
+      hash = "sha256-7IHpbCo/ZYbqQdCI6o6AGx80ABqxnMmmXe+KOMOaW9o=";
     };
     patches = [
       (fetchpatch {
