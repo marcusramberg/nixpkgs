@@ -36111,10 +36111,10 @@ with self;
 
   TextMultiMarkdown = buildPerlPackage {
     pname = "Text-MultiMarkdown";
-    version = "1.001";
+    version = "1.005";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/B/BD/BDFOY/Text-MultiMarkdown-1.001.tar.gz";
-      hash = "sha256-UB1ErH2lSUSZzqhR6bL7UlOAgLDB6TYjDIwm1n4EhDM=";
+      url = "mirror://cpan/authors/id/B/BR/BRIANDFOY/Text-MultiMarkdown-1.005.tar.gz";
+      hash = "sha256-Chkembd+aPywyI0q/6p5dSuqYzqLZaeG36unn5MKhxk=";
     };
     buildInputs = [
       ListMoreUtils
