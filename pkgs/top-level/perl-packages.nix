@@ -6523,10 +6523,10 @@ with self;
 
   CPAN = buildPerlPackage {
     pname = "CPAN";
-    version = "2.36";
+    version = "2.38";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/A/AN/ANDK/CPAN-2.36.tar.gz";
-      hash = "sha256-HXKl60DliOPBDx88hckC6HGxaDdH1ncjOvd3yCv8kJ4=";
+      url = "mirror://cpan/authors/id/A/AN/ANDK/CPAN-2.38.tar.gz";
+      hash = "sha256-WzN8ng5vA3wWw7oBwLdYYAZHqD3kpeeOQaXMJu5ooe4=";
     };
     propagatedBuildInputs = [
       ArchiveZip
