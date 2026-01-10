@@ -9709,11 +9709,11 @@ with self;
 
   DBDSQLite = buildPerlPackage {
     pname = "DBD-SQLite";
-    version = "1.74";
+    version = "1.78";
 
     src = fetchurl {
-      url = "mirror://cpan/authors/id/I/IS/ISHIGAKI/DBD-SQLite-1.74.tar.gz";
-      hash = "sha256-iZSZfYS5/rRUd5X3h0bGYfty48tqJdvdeJtzH1aIpN0=";
+      url = "mirror://cpan/authors/id/I/IS/ISHIGAKI/DBD-SQLite-1.78.tar.gz";
+      hash = "sha256-77rXeUuvqk50dsB0RaM7v+EEDjgLqjOVoCY17r44WdU=";
     };
 
     propagatedBuildInputs = [ DBI ];
