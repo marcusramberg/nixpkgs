@@ -14442,10 +14442,10 @@ with self;
 
   FutureIO = buildPerlModule {
     pname = "Future-IO";
-    version = "0.14";
+    version = "0.18";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/P/PE/PEVANS/Future-IO-0.14.tar.gz";
-      hash = "sha256-a1j++vwwlMJwHwp7mMsUCwmItRaKfV3069Hu6OhyBgo=";
+      url = "mirror://cpan/authors/id/P/PE/PEVANS/Future-IO-0.18.tar.gz";
+      hash = "sha256-NEOvklLa0SQ7ybGiEnsSDnlxmybNDsjjJprYiLgisPs=";
     };
     buildInputs = [ TestFutureIOImpl ];
     propagatedBuildInputs = [
