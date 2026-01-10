@@ -11305,10 +11305,10 @@ with self;
 
   DistZillaPluginTestMinimumVersion = buildPerlModule {
     pname = "Dist-Zilla-Plugin-Test-MinimumVersion";
-    version = "2.000010";
+    version = "2.000011";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/E/ET/ETHER/Dist-Zilla-Plugin-Test-MinimumVersion-2.000010.tar.gz";
-      hash = "sha256-uLcfS2S2ifS2R6OofWqqrkWmiJLTXja6qXb2BXNjcPs=";
+      url = "mirror://cpan/authors/id/E/ET/ETHER/Dist-Zilla-Plugin-Test-MinimumVersion-2.000011.tar.gz";
+      hash = "sha256-WV8+BxjtUo3Mn54v58cjhGC1SRv/YvgPb4KkbaXFeaA=";
     };
     buildInputs = [
       ModuleBuildTiny
