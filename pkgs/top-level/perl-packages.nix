@@ -17590,10 +17590,10 @@ with self;
 
   IOSocketSSL = buildPerlPackage {
     pname = "IO-Socket-SSL";
-    version = "2.083";
+    version = "2.098";
     src = fetchurl {
-      url = "mirror://cpan/authors/id/S/SU/SULLR/IO-Socket-SSL-2.083.tar.gz";
-      hash = "sha256-kE7yh2VECpfYqaDfWX+MPX88sKBT0bCCwQvtA7yAIGk=";
+      url = "mirror://cpan/authors/id/S/SU/SULLR/IO-Socket-SSL-2.098.tar.gz";
+      hash = "sha256-s4RzviAlaxoGRH3WdprRYr+taiWCNO0sfi4YGcFsTfc=";
     };
     propagatedBuildInputs = [
       MozillaCA
