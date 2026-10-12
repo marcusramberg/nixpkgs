@@ -46,7 +46,10 @@ in
 
     systemd.packages = [ cfg.package ];
 
-    systemd.user.services.dsearch.wantedBy = mkIf cfg.systemd.enable [ cfg.systemd.target ];
+    systemd.user.services.dsearch = mkIf cfg.systemd.enable {
+      wantedBy = [ cfg.systemd.target ];
+      unitConfig.ConditionUser = "!@system";
+    };
   };
 
   meta.teams = [ lib.teams.danklinux ];
